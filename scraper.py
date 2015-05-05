@@ -14,12 +14,14 @@ soup = BeautifulSoup(html)
 block = soup.find('div',{'id':'directory'}) # get the section where the csv of the directory is published
 csvA = block.find('a',href=True)
 csvUrl = csvA['href'] # get the csv directory url
-print csvUrl
-
 df = pandas.read_csv(csvUrl, skiprows=4)
 cqcUrls = df.ix[:, 12] # gets the column of urls in the csv file
 
-print cqcUrls
+for url in cqcUrls
+  idhtml = urllib2.urlopen(url)
+  idsoup = BeautifulSoup(idhtml)
+  idname = idsoup.find('span',{'class':'facility-name'}).text
+  print idname
 
 todays_date = str(datetime.now())
 
