@@ -12,7 +12,7 @@ html = urllib2.urlopen(directoryUrl)
 soup = BeautifulSoup(html)
 
 block = find('div',{'id':'directory'})
-csvA = find('a',href=True)
+csvA = block.find('a',href=True)
 csvUrl = csvA['href']
 
 print csvUrl
