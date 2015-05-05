@@ -16,8 +16,8 @@ csvA = block.find('a',href=True)
 csvUrl = csvA['href'] # get the csv directory url
 print csvUrl
 
-df = pandas.read_csv(csvUrl, skiprows=3)
-cqcUrls = df.ix[:, 4] # gets the column of urls in the csv file
+df = pandas.read_csv(csvUrl, skiprows=4)
+cqcUrls = df.ix[:, 12] # gets the column of urls in the csv file
 
 print cqcUrls
 
