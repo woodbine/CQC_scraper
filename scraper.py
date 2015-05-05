@@ -23,6 +23,7 @@ for itr in iterator:
   idhtml = urllib2.urlopen(idurl)
   idsoup = BeautifulSoup(idhtml)
   idname = idsoup.find('span',{'class':'facility-name'}).text
+  idname = idname.strip().encode('utf8')
   print idname
   todays_date = str(datetime.now())
 
