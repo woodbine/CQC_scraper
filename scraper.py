@@ -15,10 +15,10 @@ block = soup.find('div',{'id':'directory'}) # get the section where the csv of t
 csvA = block.find('a',href=True)
 csvUrl = csvA['href'] # get the csv directory url
 df = pandas.read_csv(csvUrl, skiprows=4)
-iterator = df.iterrows()
+iterator = df.ix[:, 12].iteritems() # gets the column of urls in the csv file and then iterate
 
 for itr in iterator:
-  print itr.ix[:, 12] # gets the column of urls in the csv file
+  print itr
   
   '''
   idhtml = urllib2.urlopen(url)
