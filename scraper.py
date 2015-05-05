@@ -17,7 +17,7 @@ csvUrl = csvA['href'] # get the csv directory url
 print csvUrl
 
 df = pandas.read_csv(csvUrl)
-cqcUrls = df.ix[:, 15] # gets the column of urls in the csv file
+cqcUrls = df.ix[:, 0] # gets the column of urls in the csv file
 
 print cqcUrls
 
