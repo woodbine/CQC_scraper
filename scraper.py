@@ -18,9 +18,10 @@ df = pandas.read_csv(csvUrl, skiprows=4)
 iterator = df.ix[:, 12].iteritems() # gets the column of urls in the csv file and then iterate
 
 for itr in iterator:
+  print itr
+  '''
   url = itr.str
   print url
-  '''
   idhtml = urllib2.urlopen(itr)
   idsoup = BeautifulSoup(idhtml)
   idname = idsoup.find('span',{'class':'facility-name'}).text
