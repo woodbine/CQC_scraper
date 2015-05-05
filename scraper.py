@@ -18,7 +18,7 @@ df = pandas.read_csv(csvUrl, skiprows=4)
 iterator = df.ix[:, 12].iteritems() # gets the column of urls in the csv file and then iterate
 
 for itr in iterator:
-  print itr.values
+  print itr[0]
   '''
   url = itr.str
   print url
