@@ -11,12 +11,10 @@ directoryUrl = "http://www.cqc.org.uk/content/how-get-and-re-use-cqc-information
 html = urllib2.urlopen(directoryUrl)
 soup = BeautifulSoup(html)
 
-block = find('div',{'id':'directory'})
+block = soup.find('div',{'id':'directory'})
 csvA = block.find('a',href=True)
 csvUrl = csvA['href']
-
 print csvUrl
-
 
 
 todays_date = str(datetime.now())
