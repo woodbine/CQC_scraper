@@ -14,6 +14,8 @@ soup = BeautifulSoup(html)
 block = soup.find('div',{'id':'directory'}) # get the section where the csv of the directory is published
 csvA = block.find('a',href=True)
 csvUrl = csvA['href'] # get the csv directory url
+print csvUrl
+
 df = pandas.read_csv(csvUrl)
 cqcUrls = df['CQC Provider ID (for office use only)'] # gets the column of urls in the csv file
 
