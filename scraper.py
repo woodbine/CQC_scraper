@@ -18,13 +18,13 @@ df = pandas.read_csv(csvUrl, skiprows=4)
 iterator = df.ix[:, 12].iteritems() # gets the column of urls in the csv file and then iterate
 
 for itr in iterator:
-  idurl = itr[1]
-  print idurl
+  idurl = itr[1] # gets the url from the tuple
   idhtml = urllib2.urlopen(idurl)
   idsoup = BeautifulSoup(idhtml)
   idname = idsoup.find('span',{'class':'facility-name'}).text
   idname = idname.strip().encode('utf8')
-  print idname
+  
+  
   todays_date = str(datetime.now())
 
 #scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileurl, "f": filename, "d": todays_date })
