@@ -26,4 +26,4 @@ for itr in iterator:
   
   
   todays_date = str(datetime.now())
-  scraperwiki.sqlite.save(unique_keys=['idurl'], data={"idurl": idurl, "idname": idname })
+  scraperwiki.sqlite.save(unique_keys=['idurl'], data={"idurl": idurl, "idname": idname, "date": todays_date})
