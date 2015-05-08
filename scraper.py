@@ -24,6 +24,7 @@ for itr in iterator:
   idname = idsoup.find('span',{'class':'facility-name'}).contents[0]
   idname = idname.strip().encode('ascii', 'ignore')
   print idname
+  print idurl
   providerblock = idsoup.find('div',{'class':'overview-inner'})
   providerurl = "http://www.cqc.org.id" + providerblock.a['href']
   providername = providerblock.a.contents[0]
