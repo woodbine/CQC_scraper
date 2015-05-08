@@ -21,8 +21,8 @@ for itr in iterator:
   idurl = itr[1] # gets the url from the tuple
   idhtml = urllib2.urlopen(idurl)
   idsoup = BeautifulSoup(idhtml)
-  idname = idsoup.find('span',{'class':'facility-name'}).text
-  idname = idname.strip().encode_contents(formatter='html').replace('&nbsp;',' ')
+  idname = idsoup.find('span',{'class':'facility-name'}).text.encode_contents(formatter='html').replace('&nbsp;',' ')
+  idname = idname.strip().
   
   
   todays_date = str(datetime.now())
