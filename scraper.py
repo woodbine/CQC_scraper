@@ -30,6 +30,7 @@ for itr in iterator:
   providername = providerblock.a.contents[0]
   print providerurl
   print providername
+  print " : "
     
   
   todays_date = str(datetime.now())
