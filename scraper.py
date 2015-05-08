@@ -22,8 +22,7 @@ for itr in iterator:
   idhtml = urllib2.urlopen(idurl)
   idsoup = BeautifulSoup(idhtml)
   idname = idsoup.find('span',{'class':'facility-name'}).text.encode_contents(formatter='html').replace('&nbsp;',' ')
-  idname = idname.strip().
-  
+  idname = idname.strip()
   
   todays_date = str(datetime.now())
   scraperwiki.sqlite.save(unique_keys=['idurl'], data={"idurl": idurl, "idname": idname, "date": todays_date})
