@@ -25,12 +25,14 @@ for itr in iterator:
   idname = idname.strip().encode('ascii', 'ignore')
   print idname
   print idurl
-  providerblock = idsoup.find('div',{'class':'overview-inner'})
-  print providerblock
-  providerurl = "http://www.cqc.org.id" + providerblock.a['href']
-  providername = providerblock.a.contents[0]
-  print providerurl
-  print providername
+  providerblocks = idsoup.findAll('div',{'class':'overview-inner'})
+  for providerblock in providerblocks:
+    pbtext = providerblock.text
+    if 'Who runs this service' in pbtext:
+      providerurl = "http://www.cqc.org.id" + providerblock.a['href']
+      providername = providerblock.a.contents[0]
+      print providerurl
+      print providername
   print " : "
     
   
