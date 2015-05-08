@@ -23,9 +23,7 @@ for itr in iterator:
   idsoup = BeautifulSoup(idhtml)
   idname = idsoup.find('span',{'class':'facility-name'}).text
   idname = idname.strip().encode('utf8')
-  print idurl
   
   
   todays_date = str(datetime.now())
-
-#scraperwiki.sqlite.save(unique_keys=['l'], data={"l": fileurl, "f": filename, "d": todays_date })
+  scraperwiki.sqlite.save(unique_keys=['idurl'], data={"idurl": idurl, "idname": idname })
